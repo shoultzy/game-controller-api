@@ -1,5 +1,5 @@
 var app = express();
-var server = http.createServer(app).listen(80),
+var server = http.createServer(app).listen(80);
 var io = require('socket.io').listen(server),
     mongoClient = require('mongodb').MongoClient;
 
