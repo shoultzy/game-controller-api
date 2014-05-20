@@ -13,6 +13,7 @@ app.listen(port, function() {
   console.log("Listening on " + port);
 });
 
+console.log('consolePort');
 console.log(port);
 
 
