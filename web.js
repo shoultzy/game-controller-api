@@ -1,14 +1,14 @@
 var io = require('socket.io').listen(5000),
     mongoClient = require('mongodb').MongoClient;
 
-/*io.sockets.on('connection', function (socket) {
+io.sockets.on('connection', function (socket) {
   socket.emit('news', { hello: 'world' });
   socket.on('my other event', function (data) {
     console.log(data);
   });
 });
 
-
+/*
 mongoClient.connect('mongodb://heroku_app25412544:ro9drd57j7r9qii6vh48fepgv9@ds049568.mongolab.com:49568/heroku_app25412544/messages_db', function(err, db) {
   initCollection(db);
 });
