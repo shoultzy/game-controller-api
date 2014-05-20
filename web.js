@@ -1,11 +1,24 @@
-console.log('testing');
-var express = require('express');
-var app = express.createServer(express.logger());
-var io = require('socket.io').listen(app);
-//var io = require('socket.io').listen(5000);
-var mongoClient = require('mongodb').MongoClient;
+var express = require("express");
+var logfmt = require("logfmt");
+var app = express();
 
-io.sockets.on('connection', function(socket) {
+app.use(logfmt.requestLogger());
+
+app.get('/', function(req, res) {
+  res.send('Hello World!');
+});
+
+var port = Number(process.env.PORT || 5000);
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});
+
+
+
+//var io = require('socket.io').listen(5000);
+//var mongoClient = require('mongodb').MongoClient;
+
+/*io.sockets.on('connection', function(socket) {
 	
 	console.log('onConnection');
 	
@@ -78,4 +91,4 @@ function verifyCollection(db, collection) {
 			});
 		}
 	});
-}
+}*/
