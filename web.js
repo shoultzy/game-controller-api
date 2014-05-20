@@ -33,9 +33,9 @@ function initCollection (db) {
     }
   });
 }
-/*
+
 function initSockets (collection) {
-  io.sockets.on('connection', function (socket) {
+ /* io.sockets.on('connection', function (socket) {
     var stream = collection.find({}, {
       tailable: 1,
       awaitdata: true,
@@ -51,13 +51,13 @@ function initSockets (collection) {
         console.log('Wrote', data);
       });
     });
-  });
+  });*/
 }
-*/
+
 function verifyCollection (db, collection) {
   collection.isCapped(function (err, capped) {
     if (capped) {
-      //initSockets(collection);
+      initSockets(collection);
     } else {
       console.log('Not a capped collection');
 
