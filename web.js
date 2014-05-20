@@ -1,9 +1,7 @@
-var app = express();
-var server = http.createServer(app).listen(80);
-var io = require('socket.io').listen(server),
+var io = require('socket.io').listen(5000),
     mongoClient = require('mongodb').MongoClient;
 
-io.sockets.on('connection', function (socket) {
+/*io.sockets.on('connection', function (socket) {
   socket.emit('news', { hello: 'world' });
   socket.on('my other event', function (data) {
     console.log(data);
@@ -70,4 +68,4 @@ function verifyCollection (db, collection) {
       });
     }
   });
-}
+}*/
