@@ -1,4 +1,4 @@
-var io = require('socket.io').listen(8000),
+var io = require('socket.io').listen(5000),
     mongoClient = require('mongodb').MongoClient;
 
 io.sockets.on('connection', function (socket) {
