@@ -10,9 +10,9 @@ io.sockets.on('connection', function (socket) {
 
 
 mongoClient.connect('mongodb://heroku_app25412544:ro9drd57j7r9qii6vh48fepgv9@ds049568.mongolab.com:49568/heroku_app25412544/messages_db', function(err, db) {
-  //initCollection(db);
+  initCollection(db);
 });
-/*
+
 function initCollection (db) {
   db.collectionNames('messages_collection', function (err, names) {
     var collection;
@@ -20,7 +20,7 @@ function initCollection (db) {
     if (names.length === 1) {
       collection = db.collection('messages_collection');
 
-      verifyCollection(db, collection);
+      //verifyCollection(db, collection);
     } else {
       db.createCollection('messages_collection', {
         capped: true,
@@ -28,12 +28,12 @@ function initCollection (db) {
       }, function (err, collection) {
         console.log('Created collection');
 
-        verifyCollection(db, collection);
+       //verifyCollection(db, collection);
       });
     }
   });
 }
-
+/*
 function initSockets (collection) {
   io.sockets.on('connection', function (socket) {
     var stream = collection.find({}, {
