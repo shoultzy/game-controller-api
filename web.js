@@ -1,7 +1,7 @@
 console.log('testing');
-var express = require('express'),
-var app = express.createServer(express.logger()),
-var io = require('socket.io').listen(app),
+var express = require('express');
+var app = express.createServer(express.logger());
+var io = require('socket.io').listen(app);
 //var io = require('socket.io').listen(5000);
 var mongoClient = require('mongodb').MongoClient;
 
