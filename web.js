@@ -13,6 +13,8 @@ app.listen(port, function() {
   console.log("Listening on " + port);
 });
 
+console.log(port);
+
 
 
 //var io = require('socket.io').listen(5000);
