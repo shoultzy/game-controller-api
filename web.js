@@ -8,11 +8,11 @@ io.sockets.on('connection', function (socket) {
   });
 });
 
-/*
-mongoClient.connect('mongodb://heroku_app25412544:ro9drd57j7r9qii6vh48fepgv9@ds049568.mongolab.com:49568/heroku_app25412544/messages_db', function(err, db) {
-  initCollection(db);
-});
 
+mongoClient.connect('mongodb://heroku_app25412544:ro9drd57j7r9qii6vh48fepgv9@ds049568.mongolab.com:49568/heroku_app25412544/messages_db', function(err, db) {
+  //initCollection(db);
+});
+/*
 function initCollection (db) {
   db.collectionNames('messages_collection', function (err, names) {
     var collection;
