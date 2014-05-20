@@ -35,8 +35,8 @@ function initCollection (db) {
 }
 
 function initSockets (collection) {
- /* io.sockets.on('connection', function (socket) {
-    var stream = collection.find({}, {
+ io.sockets.on('connection', function (socket) {
+     /*var stream = collection.find({}, {
       tailable: 1,
       awaitdata: true,
       numberOfRetries: -1
@@ -50,8 +50,8 @@ function initSockets (collection) {
       collection.insert(data, function (err) {
         console.log('Wrote', data);
       });
-    });
-  });*/
+    });*/
+  });
 }
 
 function verifyCollection (db, collection) {
