@@ -41,11 +41,11 @@ function initSockets (collection) {
       awaitdata: true,
       numberOfRetries: -1
     }).sort({$natural: -1}).stream();
-/*
+
     stream.on('data', function (data) {
       socket.emit('messages', data);
     });
-*/
+
     socket.on('add_message', function (data) {
       collection.insert(data, function (err) {
         console.log('Wrote', data);
