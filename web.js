@@ -20,7 +20,7 @@ function initCollection (db) {
     if (names.length === 1) {
       collection = db.collection('messages_collection');
 
-      //verifyCollection(db, collection);
+      verifyCollection(db, collection);
     } else {
       db.createCollection('messages_collection', {
         capped: true,
@@ -28,7 +28,7 @@ function initCollection (db) {
       }, function (err, collection) {
         console.log('Created collection');
 
-       //verifyCollection(db, collection);
+       verifyCollection(db, collection);
       });
     }
   });
@@ -53,11 +53,11 @@ function initSockets (collection) {
     });
   });
 }
-
+*/
 function verifyCollection (db, collection) {
   collection.isCapped(function (err, capped) {
     if (capped) {
-      initSockets(collection);
+      //initSockets(collection);
     } else {
       console.log('Not a capped collection');
 
@@ -68,4 +68,4 @@ function verifyCollection (db, collection) {
       });
     }
   });
-}*/
+}
