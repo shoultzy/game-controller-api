@@ -1,3 +1,4 @@
+console.log('testing');
 var io = require('socket.io').listen(5000), mongoClient = require('mongodb').MongoClient;
 
 io.sockets.on('connection', function(socket) {
