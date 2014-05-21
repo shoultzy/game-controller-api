@@ -1,20 +1,19 @@
 var express = require("express");
 var logfmt = require("logfmt");
 var app = express();
+var port;
 
 app.use(logfmt.requestLogger());
 
 app.get('/', function(req, res) {
-	console.log('consolePort');
-	var ports = Number(process.env.PORT || 5000);
+	port = Number(process.env.PORT || 5000);
 	res.send(process.env.PORT);
 });
 
-var port = Number(process.env.PORT || 5000);
-app.listen(port, function() {
-	console.log("Listening on " + port);
-});
 
+//app.listen(port, function() {
+//	console.log("Listening on " + port);
+//});
 
 //var io = require('socket.io').listen(5000);
 //var mongoClient = require('mongodb').MongoClient;
