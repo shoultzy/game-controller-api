@@ -3,6 +3,7 @@ var logfmt = require("logfmt");
 var app = express();
 
 app.use(logfmt.requestLogger());
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
 	console.log('consolePort');
@@ -14,6 +15,22 @@ app.listen(port, function() {
   console.log("Listening on " + port);
 });
 */
+
+var express = require('express'),
+    app,
+    server;
+
+app = express();
+server = require('http').createServer(app);
+
+/*server.listen(8001);
+
+app.get('/', function (req, res) {
+  res.sendfile(__dirname + '/index.html');
+});*/
+
+app.use(express.static(__dirname + '/public'));
+
 
 var port = Number(process.env.PORT || 5000);
 var io = require('socket.io').listen(port);
@@ -93,5 +110,3 @@ function verifyCollection(db, collection) {
 		}
 	});
 }
-
-console.log('fileCompleted');
