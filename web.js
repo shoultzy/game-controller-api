@@ -93,3 +93,5 @@ function verifyCollection(db, collection) {
 		}
 	});
 }
+
+console.log('fileCompleted');
