@@ -1,4 +1,4 @@
-var express = require("express");
+/*var express = require("express");
 var logfmt = require("logfmt");
 var app = express();
 
@@ -6,20 +6,20 @@ app.use(logfmt.requestLogger());
 
 app.get('/', function(req, res) {
 	console.log('consolePort');
-  //res.send(process.env.PORT);
+  	res.send(process.env.PORT);
 });
 
 var port = Number(process.env.PORT || 5000);
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
+*/
 
-
-
+var port = Number(process.env.PORT || 5000);
 var io = require('socket.io').listen(port);
-//var mongoClient = require('mongodb').MongoClient;
+var mongoClient = require('mongodb').MongoClient;
 
-/*io.sockets.on('connection', function(socket) {
+io.sockets.on('connection', function(socket) {
 	
 	console.log('onConnection');
 	
@@ -92,4 +92,4 @@ function verifyCollection(db, collection) {
 			});
 		}
 	});
-}*/
+}
