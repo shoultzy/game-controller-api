@@ -6,15 +6,13 @@ app.use(logfmt.requestLogger());
 
 app.get('/', function(req, res) {
 	console.log('consolePort');
-  res.send('Hello World2!');
+  res.send(process.env.PORT);
 });
 
 var port = Number(process.env.PORT || 5000);
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
-
-console.log(port);
 
 
 
