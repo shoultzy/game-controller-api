@@ -1,0 +1,22 @@
+{
+  "name": "midkent-realtime-webapp",
+  "version": "0.0.0",
+  "description": "A real time web app for Mid Kent college students",
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ahmednuaman/midkent-realtime-webapp.git"
+  },
+  "author": "Ahmed Nuaman (ahmed@ahmednuaman.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahmednuaman/midkent-realtime-webapp/issues"
+  },
+  "homepage": "https://github.com/ahmednuaman/midkent-realtime-webapp",
+  "devDependencies": {
+    "express": "^4.1.0"
+  }
+}
