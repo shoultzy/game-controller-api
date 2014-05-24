@@ -1,21 +1,3 @@
-/*var express = require("express");
-var logfmt = require("logfmt");
-var app = express();
-
-app.use(logfmt.requestLogger());
-app.use(express.static(__dirname + '/public'));
-
-app.get('/', function(req, res) {
-	console.log('consolePort');
-  	res.send(process.env.PORT);
-});
-
-var port = Number(process.env.PORT || 5000);
-app.listen(port, function() {
-  console.log("Listening on " + port);
-});
-*/
-
 var express = require('express'),
     app,
     server;
@@ -23,14 +5,7 @@ var express = require('express'),
 app = express();
 server = require('http').createServer(app);
 
-/*server.listen(8001);
-
-app.get('/', function (req, res) {
-  res.sendfile(__dirname + '/index.html');
-});*/
-
 app.use(express.static(__dirname + '/public'));
-
 
 var port = Number(process.env.PORT || 5000);
 var io = require('socket.io').listen(port);
@@ -48,7 +23,7 @@ io.sockets.on('connection', function(socket) {
 	});
 });
 
-mongoClient.connect('mongodb://heroku_app25412544:ro9drd57j7r9qii6vh48fepgv9@ds049568.mongolab.com:49568/heroku_app25412544/messages_db', function(err, db) {
+mongoClient.connect('mongodb://heroku_app25601055:9q4lt9502mvcp0ebuu3run97ae@ds053218.mongolab.com:53218/heroku_app25601055/user_worldData', function(err, db) {
 	initCollection(db);
 });
 
