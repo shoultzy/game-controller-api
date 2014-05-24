@@ -8,7 +8,7 @@ server = require('http').createServer(app);
 app.use(express.static(__dirname + '/public'));
 
 var port = Number(process.env.PORT || 5000);
-//var io = require('socket.io').listen(5000);
+var io = require('socket.io').listen(port);
 var mongoClient = require('mongodb').MongoClient;
 
 io.sockets.on('connection', function(socket) {
