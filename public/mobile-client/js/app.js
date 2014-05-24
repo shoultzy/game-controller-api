@@ -1,78 +1,30 @@
-angular.module('game-controller-api', [])
-  .service('socketService', [(function () {
-      function SocketService () {
-        this.socket = io.connect('http://limitless-thicket-5434.herokuapp.com/');
-        //this.socket = io.connect('http://localhost:5000/');
-      }
+//var socket = io.connect('http://localhost:5000/');
+var socket = io.connect('http://limitless-thicket-5434.herokuapp.com/');
 
-      SocketService.prototype.on = function(event, callback) {
-        this.socket.on(event, callback);
-      };
+var btn = document.getElementById("btn");
+btn.addEventListener("mousedown", onUserInput, false);
+btn.addEventListener("mouseup", onUserInput, false);
+btn.addEventListener("mouseout", onUserInput, false);
 
-      SocketService.prototype.emit = function(event, data) {
-        this.socket.emit(event, data);
-      };
 
-      return SocketService;
-    })()]
-  )
-  .controller('FormController', [
-    '$scope',
-    'socketService',
-    (function () {
-      function FormController ($scope, socketService) {
-        this.$scope = $scope;
-        this.socketService = socketService;
+function onUserInput(event){
+	switch(event.type){
+		case 'mousedown':
+			socket.emit('add_message', { userUID: '0000', userAction: 'mouseDown' });
+		break;
+		
+		case 'mouseup':
+			socket.emit('add_message', { userUID: '0000', userAction: 'mouseUp' });
+		break;
+		
+		case 'mouseout':
+			socket.emit('add_message', { userUID: '0000', userAction: 'mouseUp' });
+		break;
+	}
+}
 
-        this.init();
-      }
 
-      FormController.prototype.init = function() {
-        this.addScopeMethods();
-      };
-
-      FormController.prototype.addScopeMethods = function() {
-        this.$scope.sendMessage = angular.bind(this, this.sendMessage);
-      };
-
-      FormController.prototype.sendMessage = function($event) {
-        $event.preventDefault();
-
-        this.socketService.emit('add_message', this.$scope.message);
-      };
-
-      return FormController;
-    })()]
-  )
-  .controller('MessagesController', [
-    '$scope',
-    'socketService',
-    (function () {
-      function MessagesController ($scope, socketService) {
-        this.$scope = $scope;
-        this.socketService = socketService;
-
-        this.init();
-      }
-
-      MessagesController.prototype.init = function() {
-        this.$scope.messages = [];
-
-        this.addSocketListeners();
-      };
-
-      MessagesController.prototype.addSocketListeners = function() {
-        this.socketService.on('messages', angular.bind(this, this.handleMessage));
-      };
-
-      MessagesController.prototype.handleMessage = function(message) {
-        this.$scope.messages.unshift(message);
-
-        if (!this.$scope.$$phase) {
-          this.$scope.$apply();
-        }
-      };
-
-      return MessagesController;
-    })()]
-  );
+socket.on('news', function (data) {
+	console.log(data);
+    //socket.emit('my other event', { my: 'data' });
+});
