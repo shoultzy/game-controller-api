@@ -1,7 +1,8 @@
-angular.module('midkent-realtime-webapp', [])
+angular.module('game-controller-api', [])
   .service('socketService', [(function () {
       function SocketService () {
-        this.socket = io.connect('http://immense-shelf-2586.herokuapp.com/');
+        this.socket = io.connect('http://limitless-thicket-5434.herokuapp.com/');
+        //this.socket = io.connect('http://localhost:5000/');
       }
 
       SocketService.prototype.on = function(event, callback) {
