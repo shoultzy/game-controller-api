@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shoultzy/midkent-realtime-api.git"
+    "url": "https://github.com/shoultzy/game-controller-api.git"
   },
   "author": "mshoult",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shoultzy/midkent-realtime-api/issues"
+    "url": "https://github.com/shoultzy/game-controller-api/issues"
   },
-  "homepage": "https://github.com/shoultzy/midkent-realtime-api",
+  "homepage": "https://github.com/shoultzy/game-controller-api.git",
   "dependencies": {
     "express": "^4.2.0",
     "logfmt": "^1.1.2",
