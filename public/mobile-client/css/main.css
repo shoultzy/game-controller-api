@@ -22,7 +22,6 @@
 }
 
 .buttonUI{
-	
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -81,7 +80,9 @@
 	background-image:url('../images/up-arrow.png');
 	background-color:#c62d1f;
 	background-repeat:no-repeat;
-}.buttonUI:active {
+}
+
+.buttonUI:active {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -93,7 +94,9 @@
 	background-image:url('../images/up-arrow.png');
 	background-color:#790000;
 	background-repeat:no-repeat;
-}.buttonUI:focus {
+}
+
+.buttonUI:focus {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
