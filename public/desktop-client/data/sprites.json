@@ -1,0 +1,7 @@
+{
+   "player"      : {"tilew":30, "tileh":30, "sx":0, "sy":0,  "w":30,  "h":30},
+   "enemy"       : {"tilew":30, "tileh":24, "sx":0, "sy":30, "w":30,  "h":24},
+   "tower"       : {"tilew":30, "tileh":30, "sx":0, "sy":54, "w":30,  "h":30},
+   "count"       : {"tilew":32, "tileh":48, "sx":0, "sy":96, "w":96,  "h":48},
+   "walk_right"  : {"tilew":30, "tileh":40, "sx":0, "sy":84, "w":180, "h":40}
+}

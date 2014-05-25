@@ -1,0 +1,6 @@
+{
+   "player"  : {"tilew":90, "tileh":90, "sx":0, "sy":0, "w": 1980, "h":90},
+   "fly_up"  : {"tilew":90, "tileh":90, "sx":0, "sy":90, "w":1980, "h":90},
+   "fly_down"  : {"tilew":90, "tileh":90, "sx":0, "sy":180, "w":1980, "h":90},
+   "jump"  : {"tilew":90, "tileh":90, "sx":0, "sy":270, "w":1980, "h":90}
+}

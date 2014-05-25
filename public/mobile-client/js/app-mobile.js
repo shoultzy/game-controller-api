@@ -6,25 +6,22 @@ btn.addEventListener("mousedown", onUserInput, false);
 btn.addEventListener("mouseup", onUserInput, false);
 btn.addEventListener("mouseout", onUserInput, false);
 
+//var pressNum = 0;
 
 function onUserInput(event){
 	switch(event.type){
 		case 'mousedown':
-			socket.emit('add_message', { userUID: '0000', userAction: 'mouseDown' });
+			socket.emit('update_world_data', { userUID: '0000', userAction: 1 });
 		break;
 		
 		case 'mouseup':
-			socket.emit('add_message', { userUID: '0000', userAction: 'mouseUp' });
+			socket.emit('update_world_data', { userUID: '0000', userAction: 0 });
 		break;
 		
 		case 'mouseout':
-			socket.emit('add_message', { userUID: '0000', userAction: 'mouseUp' });
+			socket.emit('update_world_data', { userUID: '0000', userAction: 0 });
 		break;
 	}
+	
+	//pressNum++;
 }
-
-
-socket.on('news', function (data) {
-	console.log(data);
-    //socket.emit('my other event', { my: 'data' });
-});

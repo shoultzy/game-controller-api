@@ -1,28 +1,28 @@
-<html data-ng-app="midkent-realtime-webapp">
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Web app</title>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, user-scalable=0, minimum-scale=0.5, maximum-scale=1.0"/>
+<title>Platformer</title>
+<script src='js/lib/quintus.js'></script>
+<script src='js/lib/quintus_sprites.js'></script>
+<script src='js/lib/quintus_scenes.js'></script>
+<script src='js/lib/quintus_input.js'></script>
+<script src='js/lib/quintus_2d.js'></script>
+<script src='js/lib/quintus_touch.js'></script>
+<script src='js/lib/quintus_ui.js'></script>
+<script src='js/lib/quintus_anim.js'></script>
+
+<script src='js/heroPlayer.js'></script>
+<script src='js/levelBuilder.js'></script>
+<script src='js/platformer.js'></script>
+
+<script src="bower_components/socket.io-client/dist/socket.io.js"></script>
+<script src="js/app-desktop.js"></script>
+	
+<style> body { padding:0px; margin:0px; } </style>
 </head>
-<body>
-  <div>
-    <div id="form" data-ng-controller="FormController">
-      <form data-ng-submit="sendMessage($event)">
-        <label>Name:<input type="text" data-ng-model="message.name"></label>
-        <br>
-        <label>Message:<textarea name="" id="" cols="30" rows="10" data-ng-model="message.message"></textarea></label><br>
-        <button type="submit">Send!</button>
-      </form>
-    </div>
-    <div id="messages" data-ng-controller="MessagesController">
-      <div data-ng-repeat="message in messages">
-        <ul>
-          <li data-ng-repeat="(key, value) in message"><strong>{{key}}:</strong> {{value}}</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/socket.io-client/dist/socket.io.js"></script>
-  <script src="js/app.js"></script>
+<body background-color="#000">
 </body>
 </html>
