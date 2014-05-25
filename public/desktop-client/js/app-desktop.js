@@ -9,7 +9,7 @@ socket.on('on_receive_world_data', function (data) {
 	userAction = data.userAction;
 });
 
-setInterval(receiveWorldData, 100);
+setInterval(receiveWorldData, 50);
 
 function receiveWorldData(){
 	//console.log('sendRequest');
